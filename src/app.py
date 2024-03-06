@@ -78,6 +78,15 @@ app.layout = html.Div(
                         style = header_style)
                          ]
         )]),
+                    html.Div(className='row',
+        style={'background-color': '#262c34', 'padding': '10px'},  # Background color and padding adjusted for a clean look
+        children=[
+            html.Div(className='twelve columns',
+                style = {'textAlign': 'center', 'color' : 'white'},
+                children = [
+        html.P('Text area')
+                         ]
+        )]),
         
     # Dropdown section 
     html.Div(className = 'row',
@@ -175,11 +184,15 @@ html.Div(className='row', children=[
         html.Div(className='row', children=[
             # Graph 1
             html.Div(className='eight columns', style={'display': 'inline-block',
-                                                    'padding-left': '10px'}, children=[
+                                                    'padding-left': '10px',
+                                                    'padding-right': '5px',
+                                                      'padding-bottom': '5px'}, children=[
                 dcc.Graph(id='histo-chart-final')
             ]),
             # Graph 2
-            html.Div(className='four columns', style={'display': 'inline-block'}, children=[
+            html.Div(className='four columns', style={'padding-left': '5px', 'padding-right': '5px',
+                                                      'display': 'inline-block',
+                                                      'padding-bottom': '5px'}, children=[
                 dcc.Graph(id='second-chart-final')
             ])
         ])
