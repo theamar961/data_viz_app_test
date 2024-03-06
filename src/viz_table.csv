@@ -1,0 +1,31 @@
+Keyword,# of articles DHQ,# of articles JCA,# of articles JOCCH,Total,Significance score,Rank
+data,25,9,37,71,1.0,1
+visualization,28,3,23,54,1.0,2
+information,3,4,15,22,1.0,3
+distribution,2,2,4,8,1.0,4
+model,9,1,34,44,0.9,5
+representation,8,5,17,30,0.9,6
+machine learning,7,5,12,24,0.9,7
+modeling,5,1,6,12,0.9,8
+graph,3,1,3,7,0.9,9
+number,2,1,1,4,0.9,10
+text mining,4,1,1,6,0.85,12
+analyze,8,2,7,17,0.85,11
+analysis,26,6,29,61,0.8,13
+computational methods,22,15,5,42,0.8,14
+evaluation,3,1,24,28,0.8,15
+interpretation,17,1,9,27,0.8,16
+map,6,3,9,18,0.8,17
+network analysis,8,2,2,12,0.8,18
+quantitative analysis,2,4,4,10,0.8,19
+classification,4,1,5,10,0.8,20
+frequency,2,1,2,5,0.8,21
+correlation,2,2,1,5,0.8,22
+variability,1,1,1,3,0.8,23
+pattern,4,1,9,14,0.75,25
+interaction,3,1,10,14,0.75,24
+accessibility,5,1,7,13,0.7,32
+metadata,9,2,25,36,0.7,26
+use cases,2,1,3,6,0.7,36
+scale,2,2,6,10,0.7,35
+network,7,3,1,11,0.7,34

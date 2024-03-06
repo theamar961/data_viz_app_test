@@ -1,0 +1,121 @@
+Keyword,Significance score,Rank,Journal,# of articles,% of articles,Size
+data,1.0,1,JOCCH,37,0.073,48
+data,1.0,1,JCA,9,0.059,48
+data,1.0,1,Total,71,0.051,48
+visualization,1.0,2,JOCCH,23,0.045,47
+visualization,1.0,2,DHQ,28,0.039,47
+visualization,1.0,2,Total,54,0.039,47
+data,1.0,1,DHQ,25,0.035,48
+information,1.0,3,JOCCH,15,0.029,46
+information,1.0,3,JCA,4,0.026,46
+visualization,1.0,2,JCA,3,0.02,47
+information,1.0,3,Total,22,0.016,46
+distribution,1.0,4,JCA,2,0.013,45
+distribution,1.0,4,JOCCH,4,0.008,45
+distribution,1.0,4,Total,8,0.006,45
+information,1.0,3,DHQ,3,0.004,46
+distribution,1.0,4,DHQ,2,0.003,45
+model,0.9,5,JOCCH,34,0.067,44
+representation,0.9,6,JCA,5,0.033,43
+machine learning,0.9,7,JCA,5,0.033,42
+representation,0.9,6,JOCCH,17,0.033,43
+model,0.9,5,Total,44,0.032,44
+machine learning,0.9,7,JOCCH,12,0.024,42
+representation,0.9,6,Total,30,0.022,43
+machine learning,0.9,7,Total,24,0.017,42
+model,0.9,5,DHQ,9,0.013,44
+modeling,0.9,8,JOCCH,6,0.012,41
+representation,0.9,6,DHQ,8,0.011,43
+machine learning,0.9,7,DHQ,7,0.01,42
+modeling,0.9,8,Total,12,0.009,41
+modeling,0.9,8,DHQ,5,0.007,41
+model,0.9,5,JCA,1,0.007,44
+modeling,0.9,8,JCA,1,0.007,41
+graph,0.9,9,JCA,1,0.007,40
+number,0.9,10,JCA,1,0.007,39
+graph,0.9,9,JOCCH,3,0.006,40
+graph,0.9,9,Total,7,0.005,40
+graph,0.9,9,DHQ,3,0.004,40
+number,0.9,10,DHQ,2,0.003,39
+number,0.9,10,Total,4,0.003,39
+number,0.9,10,JOCCH,1,0.002,39
+analyze,0.85,11,JOCCH,7,0.014,38
+analyze,0.85,11,JCA,2,0.013,38
+analyze,0.85,11,Total,17,0.012,38
+analyze,0.85,11,DHQ,8,0.011,38
+text mining,0.85,12,JCA,1,0.007,37
+text mining,0.85,12,DHQ,4,0.006,37
+text mining,0.85,12,Total,6,0.004,37
+text mining,0.85,12,JOCCH,1,0.002,37
+computational methods,0.8,14,JCA,15,0.099,35
+analysis,0.8,13,JOCCH,29,0.057,36
+evaluation,0.8,15,JOCCH,24,0.047,34
+analysis,0.8,13,Total,61,0.044,36
+analysis,0.8,13,JCA,6,0.039,36
+analysis,0.8,13,DHQ,26,0.036,36
+computational methods,0.8,14,DHQ,22,0.031,35
+computational methods,0.8,14,Total,42,0.03,35
+quantitative analysis,0.8,19,JCA,4,0.026,30
+interpretation,0.8,16,DHQ,17,0.024,33
+map,0.8,17,JCA,3,0.02,32
+evaluation,0.8,15,Total,28,0.02,34
+interpretation,0.8,16,Total,27,0.02,33
+interpretation,0.8,16,JOCCH,9,0.018,33
+map,0.8,17,JOCCH,9,0.018,32
+network analysis,0.8,18,JCA,2,0.013,31
+correlation,0.8,22,JCA,2,0.013,27
+map,0.8,17,Total,18,0.013,32
+network analysis,0.8,18,DHQ,8,0.011,31
+computational methods,0.8,14,JOCCH,5,0.01,35
+classification,0.8,20,JOCCH,5,0.01,29
+network analysis,0.8,18,Total,12,0.009,31
+map,0.8,17,DHQ,6,0.008,32
+quantitative analysis,0.8,19,JOCCH,4,0.008,30
+evaluation,0.8,15,JCA,1,0.007,34
+interpretation,0.8,16,JCA,1,0.007,33
+classification,0.8,20,JCA,1,0.007,29
+frequency,0.8,21,JCA,1,0.007,28
+variability,0.8,23,JCA,1,0.007,26
+quantitative analysis,0.8,19,Total,10,0.007,30
+classification,0.8,20,Total,10,0.007,29
+classification,0.8,20,DHQ,4,0.006,29
+evaluation,0.8,15,DHQ,3,0.004,34
+network analysis,0.8,18,JOCCH,2,0.004,31
+frequency,0.8,21,JOCCH,2,0.004,28
+frequency,0.8,21,Total,5,0.004,28
+correlation,0.8,22,Total,5,0.004,27
+quantitative analysis,0.8,19,DHQ,2,0.003,30
+frequency,0.8,21,DHQ,2,0.003,28
+correlation,0.8,22,DHQ,2,0.003,27
+correlation,0.8,22,JOCCH,1,0.002,27
+variability,0.8,23,JOCCH,1,0.002,26
+variability,0.8,23,Total,3,0.002,26
+variability,0.8,23,DHQ,1,0.001,26
+interaction,0.75,24,JOCCH,10,0.02,25
+pattern,0.75,25,JOCCH,9,0.018,24
+interaction,0.75,24,Total,14,0.01,25
+pattern,0.75,25,Total,14,0.01,24
+interaction,0.75,24,JCA,1,0.007,25
+pattern,0.75,25,JCA,1,0.007,24
+pattern,0.75,25,DHQ,4,0.006,24
+interaction,0.75,24,DHQ,3,0.004,25
+metadata,0.7,26,JOCCH,25,0.049,23
+metadata,0.7,26,Total,36,0.026,23
+network,0.7,34,JCA,3,0.02,15
+accessibility,0.7,32,JOCCH,7,0.014,17
+metadata,0.7,26,DHQ,9,0.013,23
+metadata,0.7,26,JCA,2,0.013,23
+scale,0.7,35,JCA,2,0.013,14
+scale,0.7,35,JOCCH,6,0.012,14
+network,0.7,34,DHQ,7,0.01,15
+accessibility,0.7,32,Total,13,0.009,17
+network,0.7,34,Total,11,0.008,15
+accessibility,0.7,32,DHQ,5,0.007,17
+accessibility,0.7,32,JCA,1,0.007,17
+use cases,0.7,36,JCA,1,0.007,13
+scale,0.7,35,Total,10,0.007,14
+use cases,0.7,36,JOCCH,3,0.006,13
+use cases,0.7,36,Total,6,0.004,13
+scale,0.7,35,DHQ,2,0.003,14
+use cases,0.7,36,DHQ,2,0.003,13
+network,0.7,34,JOCCH,1,0.002,15
