@@ -1,3 +1,5 @@
+#https://www.youtube.com/watch?v=XWJBJoV5yww&ab_channel=CharmingData
+
 import pandas as pd
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import pandas as pd
@@ -280,7 +282,7 @@ def update_graph(selected_journals, selected_keywords):
                                               "Journal": False}, color_discrete_sequence=distinct_colors)
     fig.update_yaxes(title_text="Digital Humanities Journal", showgrid=False)
     fig.update_xaxes(title_text="% of Articles with keyword", tickformat='.2%', 
-                     showgrid=True, gridcolor='#404040', gridwidth=1, griddash='solid')
+                     showgrid=True, gridcolor='#404040', gridwidth=1)
     fig.update_traces(showlegend=True)
 
 
