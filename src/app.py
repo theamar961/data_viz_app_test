@@ -184,13 +184,13 @@ html.Div(className='row', children=[
         html.Div(className='row', children=[
             # Graph 1
             html.Div(className='eight columns', style={'display': 'inline-block',
-                                                    'padding-left': '10px',
+                                                    'padding-left': '2.5px',
                                                     'padding-right': '5px',
                                                       'padding-bottom': '5px'}, children=[
                 dcc.Graph(id='histo-chart-final')
             ]),
             # Graph 2
-            html.Div(className='four columns', style={'padding-left': '5px', 'padding-right': '5px',
+            html.Div(className='four columns', style={'padding-left': '5px', 'padding-right': '2.5px',
                                                       'display': 'inline-block',
                                                       'padding-bottom': '5px'}, children=[
                 dcc.Graph(id='second-chart-final')
