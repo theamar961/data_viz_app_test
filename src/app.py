@@ -271,55 +271,98 @@ def update_table(year_range, selected_journals, selected_keywords):
 
 
 # Callback to update the scatter plot based on the selected journal(s)
+# Callback to update the scatter plot based on the selected journal(s)
 @app.callback(
-    Output(component_id='histo-chart-final', component_property='figure'),
-    Input(component_id='journal-dropdown', component_property='value'),
-    Input('keyword-dropdown', 'value')
+    Output('histo-chart-final', 'figure'),
+    [Input('year-range-slider', 'value'),
+     Input(component_id='journal-dropdown', component_property='value'),
+    Input('keyword-dropdown', 'value')])
 
-)
 
-def update_graph(selected_journals, selected_keywords):
+def update_graph(year_range, selected_journals, selected_keywords):
+    global yaxis_range  # Access the global variable
+
     if selected_keywords is None or len(selected_keywords) == 0:
         selected_keywords = df_2['Keyword'].unique().tolist()
         
     if selected_journals is None or len(selected_journals) == 0:
         selected_journals = ["DHQ", "JOCCH", "JCA"]
         #return {}  # If no journals are selected, return an empty figure
+        
+        
+    journal_yearly_dict = {'JCA' : 'JCA_yearly_total',
+               'DHQ' : 'DHQ_yearly_total', 
+               'JOCCH' : 'JOOCH_yearly_total'}
+
+    journal_keyword_dict = {'JCA' : '# of articles keyword DHQ',
+               'DHQ' : '# of articles keyword JCA', 
+               'JOCCH' : '# of articles keyword JOCCH'}
+
+    if year_range is None or len(year_range) == 0:
+        
+        return {}  # If no year range is selected, return an empty figure
+    else:
+        plot_df_final = df_2[(df_2['Year'] >= year_range[0]) & (df_2['Year'] <= year_range[1])]
+        plot_df_final = plot_df_final[plot_df_final["Keyword"].isin(selected_keywords)]
+
+        cols_selected = ["# of articles keyword "+i for i in selected_journals]
+        plot_df_final_2 = plot_df_final.groupby(["Keyword", "Significance score", "Rank", "Size"]).sum()[cols_selected]
+
+        df_update = plot_df_final_2.reset_index()
+
+        df_update.fillna(0, inplace = True)
+        print("HI")
+        df_update.head()
+
+        year_df = df_4[(df_4['Year'] >= year_range[0]) & (df_4['Year'] <= year_range[1])][["DHQ", "JCA", "JOCCH"]]
+
+        year_df = year_df.sum()
+
+        for i in selected_journals:
+            df_update[i] = df_update["# of articles keyword "+i]/year_df[i]
+
+        import numpy as np
+        df_update.replace(np.inf, inplace = True)
+        df_update.fillna(0, inplace = True)
+
+        df_update = pd.melt(df_update, id_vars=['Keyword', 'Significance score', 'Rank', 'Size'], 
+                    value_vars=selected_journals, 
+                    var_name='Journal', value_name='% of articles')
+        filtered_df = df_update.sort_values(by = "Size", ascending = False)
     
-    filtered_df = df_1[df_1['Journal'].isin(selected_journals)]
-    filtered_df = filtered_df[filtered_df['Keyword'].isin(selected_keywords)]
-
-    fig = px.scatter(filtered_df, y='Journal', x="% of articles", size="Size", color="Keyword",
-                     size_max=20, hover_data={"Keyword": True, "Significance score": True, "# of articles": True,
-                                              "% of articles": True, "Rank": True, "Size": False,
-                                              "Journal": False}, color_discrete_sequence=distinct_colors)
-    fig.update_yaxes(title_text="Digital Humanities Journal", showgrid=False)
-    fig.update_xaxes(title_text="% of Articles with keyword", tickformat='.2%', 
-                     showgrid=True, gridcolor='#404040', gridwidth=1)
-    fig.update_traces(showlegend=True)
-
-
-    fig.update_layout({
-        'plot_bgcolor': '#2b2b2b',  # Dark background color of the plot
-        'paper_bgcolor': '#2b2b2b',  # Dark background color of the figure
-        'font': {'color': '#FFFFFF'},  # Light text color
-        'title': {'text': "Distribution of visualization keywords across journals",  'x': 0.5, 'font': {'size': 15, 'color': '#FFFFFF'}} , # Title of the plot with center alignment
-            'margin': dict(l=50, t=50, b=50)  
-
-    })
     
-    fig.update_layout(legend=dict(
-        traceorder='normal',  # Keep the legend items in the order they are traced
-        bordercolor='Black',  # Set border color
-        borderwidth=2,  # Set border width
-        itemclick=False,  # Disable legend item selection
-        itemdoubleclick=False  # Disable legend item double click
-    ))
-    fig.update_layout(title=dict(
-        x=0.1  # Set x position of the title to the left
-    ))
-    return fig
 
+
+        fig = px.scatter(filtered_df, y='Journal', x="% of articles", size="Size", color="Keyword",
+                         size_max=20, hover_data={"Keyword": True, "Significance score": True,
+                                                  "% of articles": True, "Rank": True, "Size": False,
+                                                  "Journal": False}, color_discrete_sequence=distinct_colors)
+        fig.update_yaxes(title_text="Digital Humanities Journal", showgrid=False)
+        fig.update_xaxes(title_text="% of Articles with keyword", tickformat='.2%', 
+                         showgrid=True, gridcolor='#404040', gridwidth=1, griddash='solid')
+        fig.update_traces(showlegend=True)
+
+
+        fig.update_layout({
+            'plot_bgcolor': '#2b2b2b',  # Dark background color of the plot
+            'paper_bgcolor': '#2b2b2b',  # Dark background color of the figure
+            'font': {'color': '#FFFFFF'},  # Light text color
+            'title': {'text': "Distribution of visualization keywords across journals",  'x': 0.5, 'font': {'size': 15, 'color': '#FFFFFF'}} , # Title of the plot with center alignment
+                'margin': dict(l=50, t=50, b=50)  
+
+        })
+
+        fig.update_layout(legend=dict(
+            traceorder='normal',  # Keep the legend items in the order they are traced
+            bordercolor='Black',  # Set border color
+            borderwidth=2,  # Set border width
+            itemclick=False,  # Disable legend item selection
+            itemdoubleclick=False  # Disable legend item double click
+        ))
+        fig.update_layout(title=dict(
+            x=0.1  # Set x position of the title to the left
+        ))
+        return fig
 
 # Callback to update the second graph with provided plot data
 @app.callback(
